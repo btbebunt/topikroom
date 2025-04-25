@@ -1,0 +1,10 @@
+{
+    "cron": [
+      {
+        "path": "/api/send-every-hour",
+        "schedule": "*/5 * * * *"
+      }
+    
+    ]
+  }
+  
