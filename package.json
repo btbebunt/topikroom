@@ -2,6 +2,10 @@
   "name": "topikroom",
   "version": "1.0.0",
   "main": "index.js",
+  "dependencies": {
+    "node-cron": "^3.0.2",
+    "node-fetch": "^2.6.7"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
