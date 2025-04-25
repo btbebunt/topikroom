@@ -70,7 +70,7 @@ async function processJob(sheetId, formatter) {
   }
 }
 
-cron.schedule('0 9-20 * * *', () => {
+cron.schedule('0 10-20 * * *', () => {
     processJob(1, formatSheet1);
   }, {
     timezone: 'Asia/Ulaanbaatar'  // Монголын цагийн бүс
