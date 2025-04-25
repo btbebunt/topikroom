@@ -29,7 +29,7 @@ async function processJob(sheetId, label) {
 }
 
 // ⏰ Цаг тутам
-cron.schedule('*/5 * * * *', () => {
+cron.schedule('*/2 * * * *', () => {
   processJob(1, '🕐 Цаг тутмын мэдээ:');
 });
 
