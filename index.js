@@ -32,7 +32,7 @@ function formatSheet1({ id, word, meaning }) {
 // ✨ Sheet 2: Эшлэл
 function formatSheet2({ id, quotekr, quotemn }) {
   return `
-🌟 *Өдрийн ишлэл*: ${id}
+🌟 *Өнөөдрийн ишлэл*: ${id}
 
 _"${quotekr}"_
 
