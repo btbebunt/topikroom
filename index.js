@@ -80,12 +80,12 @@ cron.schedule('0 2-12 * * *', () => {
 // });
 
 // 🕒 Sheet 2 — Өдөр бүр 15:00
-cron.schedule('* * * * *', () => {
+cron.schedule('0 12 * * *', () => {
   processJob(2, formatSheet2);
 });
 
 // 🕗 Sheet 3 — Өдөр бүр 20:00
-cron.schedule('* * * * *', () => {
+cron.schedule('0 7 * * *', () => {
   processJob(3, formatSheet3);
 });
 
