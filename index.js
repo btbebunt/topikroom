@@ -70,24 +70,22 @@ async function processJob(sheetId, formatter) {
   }
 }
 
-cron.schedule('0 10-20 * * *', () => {
+cron.schedule('0 2-12 * * *', () => {
     processJob(1, formatSheet1);
-  }, {
-    timezone: 'Asia/Ulaanbaatar'  // Монголын цагийн бүс
   });
-
+// * * * * *, 0 10-20 * * *, 0 15 * * *, 0 20 * * *
 // // ⏰ Sheet 1 — Цаг тутам
 // cron.schedule('*/1 * * * *', () => {
 //   processJob(1, formatSheet1);
 // });
 
 // 🕒 Sheet 2 — Өдөр бүр 15:00
-cron.schedule('0 15 * * *', () => {
+cron.schedule('* * * * *', () => {
   processJob(2, formatSheet2);
 });
 
 // 🕗 Sheet 3 — Өдөр бүр 20:00
-cron.schedule('0 20 * * *', () => {
+cron.schedule('* * * * *', () => {
   processJob(3, formatSheet3);
 });
 
