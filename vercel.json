@@ -7,10 +7,6 @@
       {
         "path": "/api/cron/2.js",
         "schedule": "* * * * *"
-      },
-      {
-        "path": "/api/cron/3.js",
-        "schedule": "* * * * *"
       }
     ]
   }
