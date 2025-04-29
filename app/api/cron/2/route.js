@@ -1,3 +1,4 @@
+      // app/api/2/route.js
       import { NextResponse } from 'next/server';
       import fetchData from '@/utils/fetchJson';
       import sendMessage from '@/utils/telegram';
