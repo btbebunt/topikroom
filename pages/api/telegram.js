@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       const text = body.message.text;
       console.log(JSON.stringify(req.body, null, 2));
 
-      if (text === '/start') {
+      if (text.startsWith ('/start')) {
         const message = `Сайн байна уу!<br><br>
   
   Та <b>TOPIK рүүм</b>-д элсэхийг хүсвэл дараах дансанд 
