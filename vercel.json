@@ -5,7 +5,7 @@
     },
     {
         "path": "/api/evening",        
-        "schedule": "0 12 * * *"      
+        "schedule": "0 13 * * *"      
       }
 
 ]
