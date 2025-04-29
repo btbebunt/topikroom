@@ -1,6 +1,6 @@
 // pages/api/daily-message.js
 const BOT_TOKEN = process.env.BOT_TOKEN;
-const TELEGRAM_CHAT = process.env.TELEGRAM_CHAT;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 export default async function handler(req, res) {
   const now = new Date();
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT,
+        chat_id: TELEGRAM_CHAT_ID,
         text: message,
         parse_mode: "Markdown"
       }),
