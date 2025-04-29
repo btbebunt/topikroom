@@ -37,7 +37,7 @@ export default async function handler(req, res) {
               inline_keyboard: [
                 [
                   {
-                    text: "TOPIK Рүүмд нэгдэх 👇",
+                    text: "Төлбөр төлсөн 👇",
                     url: "https://t.me/joetutu96"
                   }
                 ]
