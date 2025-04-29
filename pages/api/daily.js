@@ -1,5 +1,5 @@
 // pages/api/daily-message.js
-
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const TELEGRAM_CHAT = process.env.TELEGRAM_CHAT;
 
 export default async function handler(req, res) {

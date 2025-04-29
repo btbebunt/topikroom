@@ -1,8 +1,0 @@
-{
-    "functions": {
-      "api/daily-message.js": {
-        "schedule": "20 9 * * *"
-      }
-    }
-  }
-  
