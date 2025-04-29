@@ -1,7 +1,7 @@
-// /pages/api/telegram.js
+// app/api/telegram/route.js
 
-export default async function handler(req, res) {
-  const body = req.body;
+export async function POST(req) {
+  const body = await req.json();
 
   if (body?.message?.text?.startsWith('/start')) {
     const chatId = body.message.chat.id;
@@ -41,5 +41,5 @@ export default async function handler(req, res) {
     }
   }
 
-  res.status(200).end();
+  return new Response("OK");
 }
