@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       const chatId = body.message.chat.id;
       const text = body.message.text;
   
-      if (text === '/start signup') {
+      if (text === '/start') {
         const message = `Сайн байна уу!<br><br>
   
   Та <b>TOPIK рүүм</b>-д элсэхийг хүсвэл дараах дансанд 
