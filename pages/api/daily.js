@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   const date = now.getDate();
   const day = weekdaysKo[now.getDay()];
 
-  const message = `안녕하세요 여러분
+  const message = `🇲🇳 | 🇰🇷안녕하세요 여러분
 
 🌥️ 오늘은 ${year}년 ${month}월 ${date}일 ${day}입니다
 
