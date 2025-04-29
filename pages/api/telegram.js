@@ -1,7 +1,9 @@
-// app/api/telegram/route.js
-
-export async function POST(req) {
-    const body = await req.json();
+export default async function handler(req, res) {
+    if (req.method !== 'POST') {
+      return res.status(405).json({ message: 'Only POST requests allowed' });
+    }
+  
+    const body = req.body;
   
     if (body?.message?.text?.startsWith('/start')) {
       const chatId = body.message.chat.id;
@@ -41,6 +43,6 @@ export async function POST(req) {
       }
     }
   
-    return new Response("OK");
+    return res.status(200).json({ ok: true });
   }
   
