@@ -8,7 +8,8 @@ export default async function handler(req, res) {
     if (body?.message?.text?.startsWith('/start')) {
       const chatId = body.message.chat.id;
       const text = body.message.text;
-  
+      console.log(JSON.stringify(req.body, null, 2));
+
       if (text === '/start') {
         const message = `Сайн байна уу!<br><br>
   
