@@ -1,6 +1,8 @@
 // pages/api/daily-message.js
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const FACEBOOK_PAGE_ID = process.env.FACEBOOK_PAGE_ID;
+const FACEBOOK_PAGE_ACCESS_TOKEN = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
 
 export default async function handler(req, res) {
   const now = new Date();
@@ -19,25 +21,41 @@ export default async function handler(req, res) {
 🔥 오늘도 한국어 공부 화이팅!`;
 
   const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
+  const facebookUrl = `https://graph.facebook.com/${FACEBOOK_PAGE_ID}/feed`;
   try {
-    const response = await fetch(telegramUrl, {
+    // 1️⃣ Telegram руу илгээх
+    const telegramResponse = await fetch(telegramUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         chat_id: TELEGRAM_CHAT_ID,
         text: message,
-        parse_mode: "Markdown"
+        parse_mode: "Markdown",
       }),
     });
 
-    if (!response.ok) {
-      throw new Error(`Telegram error: ${response.statusText}`);
+    if (!telegramResponse.ok) {
+      throw new Error(`Telegram error: ${telegramResponse.statusText}`);
+    }
+
+    // 2️⃣ Facebook рүү пост хийх
+    const facebookResponse = await fetch(facebookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message,
+        access_token: FACEBOOK_PAGE_ACCESS_TOKEN,
+      }),
+    });
+
+    if (!facebookResponse.ok) {
+      const fbErr = await facebookResponse.text();
+      throw new Error(`Facebook error: ${facebookResponse.status} ${fbErr}`);
     }
 
     return res.status(200).json({ status: "sent", message });
   } catch (error) {
-    console.error(error);
+    console.error("❌ Error sending message:", error);
     return res.status(500).json({ error: error.message });
   }
 }
