@@ -5,10 +5,10 @@ const FACEBOOK_PAGE_ACCESS_TOKEN = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
 
 
 export default async function handler(req, res) {
-  const message = `오늘 하루도 수고 많으셨습니다 😊
+  const message = `😊 오늘 하루도 수고 많으셨습니다 😊
 
-편안한 밤 되시고  🌙
-내일도 힘내요! 💪`;
+🌙 편안한 밤 되시고  🌙
+💪 내일도 힘내요! 💪`;
 
   const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
   const facebookUrl = `https://graph.facebook.com/${FACEBOOK_PAGE_ID}/feed`;
